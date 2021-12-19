@@ -30,8 +30,8 @@ function App() {
       write: false,
       plugins: [unpkgPathPlugin()],
     });
-    console.log(result);
-    setCode(result.code);
+
+    setCode(result.outputFiles[0].text);
   };
 
   //USE EFFECT

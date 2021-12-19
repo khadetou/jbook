@@ -16,9 +16,14 @@ export const unpkgPathPlugin = () => {
           return {
             loader: "jsx",
             contents: `
-              import message from 'tiny-test-pkg';
+              import message from './message';
               console.log(message);
             `,
+          };
+        } else {
+          return {
+            loader: "jsx",
+            contents: 'export default "hi there!"',
           };
         }
       });
