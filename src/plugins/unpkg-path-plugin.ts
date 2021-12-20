@@ -1,5 +1,10 @@
 import * as esbuild from "esbuild-wasm";
 import axios from "axios";
+import lacalForage from "localforage";
+
+const fileCache = lacalForage.createInstance({
+  name: "filecache",
+});
 
 export const unpkgPathPlugin = () => {
   return {
@@ -49,13 +54,24 @@ export const unpkgPathPlugin = () => {
           };
         }
 
+        const cachedResult = await fileCache.getItem(args.path);
+
+        if (cachedResult) {
+          return cachedResult;
+        }
+
         const { data, request } = await axios.get(args.path);
 
-        return {
+        const result = {
           loader: "jsx",
           contents: data,
           resolveDir: new URL("./", request.responseURL).pathname,
         };
+
+        //Store in cache
+        await fileCache.setItem(args.path, result);
+
+        return result;
       });
     },
   };
