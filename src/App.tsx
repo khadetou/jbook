@@ -3,6 +3,7 @@ import * as esbuild from 'esbuild-wasm';
 import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
 import { fetchPlugin } from './plugins/fetch-plugin';
 import CodeEditor from './components/code-editor';
+import "bulmaswatch/superhero/bulmaswatch.min.css";
 
 function App() {
 
@@ -44,8 +45,7 @@ function App() {
       }
     });
 
-    // setCode(result.outputFiles[0].text);
-    // iframeRef.current.contentWindow.postMessage(result.outputFiles[0].text, '*');
+
 
 
     iframeRef.current.contentWindow.postMessage(result.outputFiles[0].text, '*');
