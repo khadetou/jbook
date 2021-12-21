@@ -7,6 +7,7 @@ function App() {
 
   //USE REF
   const ref = useRef<any>();
+  const iframeRef = useRef<any>();
 
   //USE STATE
   const [input, setInput] = useState('');
@@ -40,7 +41,11 @@ function App() {
       }
     });
 
-    setCode(result.outputFiles[0].text);
+    // setCode(result.outputFiles[0].text);
+    // iframeRef.current.contentWindow.postMessage(result.outputFiles[0].text, '*');
+
+
+    iframeRef.current.contentWindow.postMessage(result.outputFiles[0].text, '*');
   };
 
   //USE EFFECT
@@ -50,7 +55,20 @@ function App() {
 
   //Our html page
   const html = `
-   <script>${code}</script>
+  <!DOCTYPE html>
+  <html>
+    <head>
+     
+    </head>
+    <body>
+      <div id="root"></div>
+      <script>
+        window.addEventListener('message', (event) => {
+          eval(event.data);
+        }, false);
+      </script>
+    </body>
+  </html>
   `;
 
   //RENDER
@@ -61,7 +79,7 @@ function App() {
         <button onClick={onClick}>Submit</button>
       </div>
       <pre>{code}</pre>
-      <iframe sandbox='allow-scripts' srcDoc={html} />
+      <iframe ref={iframeRef} sandbox='allow-scripts' srcDoc={html} />
     </div>
   );
 }
