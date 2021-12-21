@@ -1,11 +1,18 @@
 import MonacoEditor from '@monaco-editor/react';
+import { JsxAttributeLike } from 'typescript';
 
 interface CodeEditorProps {
     initialValue: string;
+    onChange: (value: string) => void;
 }
 
-const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue }) => {
+const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
+    const onChangeHandler = (value: any, event: any) => {
+        onChange(value);
+    }
+
     return <MonacoEditor
+        onChange={onChangeHandler}
         value={initialValue}
         height="90vh"
         language="javascript"
@@ -23,6 +30,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue }) => {
                 automaticLayout: true
             }
         }
+
     />
 }
 
