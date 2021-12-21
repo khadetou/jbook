@@ -6,7 +6,7 @@ const fileCache = lacalForage.createInstance({
   name: "filecache",
 });
 
-export const fetchPlugin = (inputCode: string) => {
+export const fetchPlugin = (inputCode?: string) => {
   return {
     name: "fetch-plugin",
     setup(build: esbuild.PluginBuild) {

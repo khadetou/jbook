@@ -11,7 +11,7 @@ function App() {
   const iframeRef = useRef<any>();
 
   //USE STATE
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState<string | undefined>('');
   const [code, setCode] = useState('');
 
   //ESBUILD 

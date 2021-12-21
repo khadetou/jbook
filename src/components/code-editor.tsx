@@ -1,18 +1,23 @@
-import MonacoEditor from '@monaco-editor/react';
-import { JsxAttributeLike } from 'typescript';
+import MonacoEditor, { OnChange, OnMount } from '@monaco-editor/react';
+
 
 interface CodeEditorProps {
     initialValue: string;
-    onChange: (value: string) => void;
+    onChange: (value?: string) => void;
 }
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
-    const onChangeHandler = (value: any, event: any) => {
+    const onChangeHandler: OnChange = (value, event) => {
         onChange(value);
+    }
+
+    const onMountHandler: OnMount = (editor, monaco) => {
+        editor.getModel()!.updateOptions({ tabSize: 2 });
     }
 
     return <MonacoEditor
         onChange={onChangeHandler}
+        onMount={onMountHandler}
         value={initialValue}
         height="90vh"
         language="javascript"
