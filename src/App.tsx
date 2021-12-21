@@ -22,7 +22,7 @@ function App() {
   }
 
   //FUNCTION TO EXECUTE CODE
-  const onClick = async () => {
+  const onClick = async (input: string) => {
     if (!ref.current) {
       return;
     }
@@ -82,9 +82,16 @@ function App() {
   //RENDER
   return (
     <div>
-      <textarea value={input} onChange={(e) => setInput(e.target.value)}></textarea>
+      <textarea
+        value={input}
+        onChange={(e) => {
+          onClick(e.target.value)
+          setInput(e.target.value)
+        }
+        }
+      ></textarea>
       <div>
-        <button onClick={onClick}>Submit</button>
+        {/* <button onClick={onClick}>Submit</button> */}
       </div>
       <iframe title="preview" ref={iframeRef} sandbox='allow-scripts' srcDoc={html} />
     </div>
