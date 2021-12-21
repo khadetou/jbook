@@ -86,8 +86,7 @@ function App() {
       <div>
         <button onClick={onClick}>Submit</button>
       </div>
-      <pre>{code}</pre>
-      <iframe ref={iframeRef} sandbox='allow-scripts' srcDoc={html} />
+      <iframe title="preview" ref={iframeRef} sandbox='allow-scripts' srcDoc={html} />
     </div>
   );
 }
