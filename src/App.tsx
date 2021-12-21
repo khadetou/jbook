@@ -48,6 +48,11 @@ function App() {
     startService();
   }, []);
 
+  //Our html page
+  const html = `
+   <script>${code}</script>
+  `;
+
   //RENDER
   return (
     <div>
@@ -56,6 +61,7 @@ function App() {
         <button onClick={onClick}>Submit</button>
       </div>
       <pre>{code}</pre>
+      <iframe sandbox='allow-scripts' srcDoc={html} />
     </div>
   );
 }
