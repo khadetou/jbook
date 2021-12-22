@@ -4,12 +4,13 @@ import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
 import { fetchPlugin } from './plugins/fetch-plugin';
 import CodeEditor from './components/code-editor';
 import "bulmaswatch/superhero/bulmaswatch.min.css";
+import Preview from './components/preview';
 
 function App() {
 
   //USE REF
   const ref = useRef<any>();
-  const iframeRef = useRef<any>();
+
 
   //USE STATE
   const [input, setInput] = useState<string | undefined>('');
@@ -29,7 +30,7 @@ function App() {
       return;
     }
 
-    iframeRef.current.srcdoc = html;
+
 
     const result = await ref.current.build({
       entryPoints: ['index.js'],
@@ -45,10 +46,7 @@ function App() {
       }
     });
 
-
-
-
-    iframeRef.current.contentWindow.postMessage(result.outputFiles[0].text, '*');
+    setCode(result.outputFiles[0].text);
   };
 
   //USE EFFECT
@@ -56,29 +54,6 @@ function App() {
     startService();
   }, []);
 
-  //Our html page
-  const html = `
-  <!DOCTYPE html>
-  <html>
-    <head>
-     
-    </head>
-    <body>
-      <div id="root"></div>
-      <script>
-        window.addEventListener('message', (event) => {
-          try{
-            eval(event.data);
-          }catch(e){
-            const root = document.getElementById('root');
-            root.innerHTML = '<div style="color: red;"><h4>Runtime Error</h4>' + e + '</div>';
-            console.error(e);
-          }
-        }, false);
-      </script>
-    </body>
-  </html>
-  `;
 
   //RENDER
   return (
@@ -96,7 +71,7 @@ function App() {
       <div>
         <button onClick={onClick}>Submit</button>
       </div>
-      <iframe title="preview" ref={iframeRef} sandbox='allow-scripts' srcDoc={html} />
+      <Preview code={code} />
     </div>
   );
 }
