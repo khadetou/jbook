@@ -24,19 +24,18 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ initialValue, onChange }) => {
         editor.getModel()!.updateOptions({ tabSize: 2 });
 
         const highlighter = new Highlighter(
-            // @ts-ignore
-            window.monaco,
+            monaco,
             codeShift,
-            editor,
-            monaco
+            editor
         );
-        // highlighter.highLightOnDidChangeModelContent(
-        //     () => { },
-        //     () => { },
-        //     undefined,
-        //     () => { }
-        // );
 
+        // console.log(editor);
+        highlighter.highLightOnDidChangeModelContent(
+            () => { },
+            () => { },
+            undefined,
+            () => { }
+        );
 
     }
 

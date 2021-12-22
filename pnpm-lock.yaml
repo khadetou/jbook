@@ -2,11 +2,11 @@ lockfileVersion: 5.3
 
 specifiers:
   '@babel/core': ^7.0.0-0
-  '@babel/parser': 6.x || 7.x
+  '@babel/parser': ^7.16.6
   '@babel/plugin-syntax-flow': ^7.14.5
   '@babel/plugin-transform-react-jsx': ^7.14.9
   '@babel/preset-env': ^7.1.6
-  '@babel/traverse': 6.x || 7.x
+  '@babel/traverse': ^7.16.5
   '@monaco-editor/react': 4.3.1
   '@testing-library/dom': ^8.11.1
   '@testing-library/jest-dom': ^5.16.1
@@ -26,7 +26,7 @@ specifiers:
   jscodeshift: 0.1.0
   localforage: ^1.10.0
   monaco-editor: ^0.21.2
-  monaco-jsx-highlighter: 1.1.8
+  monaco-jsx-highlighter: 0.0.15
   node-polyfill-webpack-plugin: ^1.1.4
   os-browserify: ^0.3.0
   postcss: ^8.1.0
@@ -67,7 +67,7 @@ dependencies:
   jscodeshift: 0.1.0
   localforage: 1.10.0
   monaco-editor: 0.21.3
-  monaco-jsx-highlighter: 1.1.8_27abbdeba4cb07b059e53d20797c2872
+  monaco-jsx-highlighter: 0.0.15_93d66467f7e395a55b4f24eea7345548
   node-polyfill-webpack-plugin: 1.1.4_webpack@5.65.0
   os-browserify: 0.3.0
   postcss: 8.4.5
@@ -6841,16 +6841,13 @@ packages:
     resolution: {integrity: sha512-9N7wATLpi+googstvtm6IKg97vPQ77FDYEpkow5tLriM/VJ0DaTRyUP4UVzcoH7KlPDX+e/rE7/imcOUeGkT6g==}
     dev: false
 
-  /monaco-jsx-highlighter/1.1.8_27abbdeba4cb07b059e53d20797c2872:
-    resolution: {integrity: sha512-+j1wVpLs2CWKVRNcnTJghzVs/wCanNxJ1sNY9uurPvX5ZFzExsvObpk6GB10pHYTAHdLIl6g9h6NWljHXjjVCg==}
-    engines: {node: '>=10', npm: '>=7'}
+  /monaco-jsx-highlighter/0.0.15_93d66467f7e395a55b4f24eea7345548:
+    resolution: {integrity: sha512-hu2T32F/y2RiwB4LJqrbdQLu7/9eeXrGLVl+7tbDBNhSJfiwkqkV27QOn7SpsNs/nsvvUMrvH7/QpGGhYuX8HA==}
     peerDependencies:
-      '@babel/parser': 6.x || 7.x
-      '@babel/traverse': 6.x || 7.x
-      monaco-editor: '>=0.21'
+      jscodeshift: ^0.11.0
+      monaco-editor: ^0.21.2
     dependencies:
-      '@babel/parser': 7.16.6
-      '@babel/traverse': 7.16.5
+      jscodeshift: 0.1.0
       monaco-editor: 0.21.3
     dev: false
 
