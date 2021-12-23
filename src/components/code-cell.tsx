@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CodeEditor from '../components/code-editor';
 import "bulmaswatch/superhero/bulmaswatch.min.css";
 import Preview from '../components/preview';
@@ -12,12 +12,13 @@ function CodeCell() {
     const [code, setCode] = useState('');
 
 
-    //FUNCTION TO EXECUTE CODE
-    const onClick = async () => {
-        const output = await bundle(input);
-        setCode(output);
-    };
-
+    //USE EFFECT
+    useEffect(() => {
+        setTimeout(async () => {
+            const output = await bundle(input);
+            setCode(output);
+        }, 1000);
+    }, [input]);
 
 
     //RENDER
