@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import './text-editor.css';
 
 const TextEditor: React.FC = () => {
-    const [value, setValue] = useState<string | undefined>('');
+    const [value, setValue] = useState<string | undefined>("# Header");
     const [editing, setEditing] = useState(false);
 
     const ref = useRef<HTMLDivElement | null>(null);
@@ -24,16 +24,21 @@ const TextEditor: React.FC = () => {
     if (editing) {
         return (
             <div className="text-editor" ref={ref}>
+
                 <MDEditor
                     value={value}
                     onChange={setValue}
                 />
+
             </div>
         )
     }
     return (
-        <div className="text-editor" onClick={() => setEditing(!editing)}>
-            <MDEditor.Markdown source={"# Header"} />
+        <div className="text-editor text-editor-b">
+            <div className="card-content">
+                <MDEditor.Markdown source={value} />
+            </div>
+            <button onClick={() => setEditing(!editing)} className="button button-format is-primary is-rounded is-small">Mark Down Editor</button>
         </div>
     )
 }

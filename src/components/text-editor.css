@@ -66,3 +66,16 @@
 .text-editor .token.list.punctuation {
   background-color: unset;
 }
+
+.text-editor-b .button-format {
+  position: absolute;
+  right: 24px;
+  top: 26px;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.text-editor-b:hover .button-format {
+  opacity: 1;
+}
