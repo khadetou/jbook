@@ -19,13 +19,16 @@ const html = `
     <body>
       <div id="root"></div>
       <script>
+        const handleError = (err)=>{
+          const root = document.getElementById('root');
+            root.innerHTML = '<div style="color: red;"><h4>Runtime Error</h4>' + e + '</div>';
+            console.error(e);
+        }
         window.addEventListener('message', (event) => {
           try{
             eval(event.data);
           }catch(e){
-            const root = document.getElementById('root');
-            root.innerHTML = '<div style="color: red;"><h4>Runtime Error</h4>' + e + '</div>';
-            console.error(e);
+            handleError(e);
           }
         }, false);
       </script>
