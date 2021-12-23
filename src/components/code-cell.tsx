@@ -10,13 +10,14 @@ function CodeCell() {
     //USE STATE
     const [input, setInput] = useState<string | undefined>('');
     const [code, setCode] = useState('');
-
+    const [err, setErr] = useState("");
 
     //USE EFFECT
     useEffect(() => {
         const timer = setTimeout(async () => {
             const output = await bundle(input);
-            setCode(output);
+            setCode(output.code);
+            setErr(output.err);
         }, 1000);
         return () => {
             clearTimeout(timer);
