@@ -35,7 +35,7 @@ function CodeCell() {
                         onChange={(value) => setInput(value)}
                     />
                 </Resizable>
-                <Preview code={code} />
+                <Preview code={code} err={err} />
             </div>
         </Resizable>
     );
