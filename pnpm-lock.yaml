@@ -18,6 +18,7 @@ specifiers:
   '@types/prettier': ^2.4.2
   '@types/react': ^17.0.37
   '@types/react-dom': ^17.0.11
+  '@types/react-resizable': ^1.7.4
   assert: ^2.0.0
   autoprefixer: ^10.0.2
   axios: ^0.24.0
@@ -33,6 +34,7 @@ specifiers:
   prettier: ^2.5.1
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-resizable: ^3.0.4
   react-scripts: 5.0.0
   recast: ^0.20.5
   remove: ^0.1.5
@@ -59,6 +61,7 @@ dependencies:
   '@types/prettier': 2.4.2
   '@types/react': 17.0.37
   '@types/react-dom': 17.0.11
+  '@types/react-resizable': 1.7.4
   assert: 2.0.0
   autoprefixer: 10.4.0_postcss@8.4.5
   axios: 0.24.0
@@ -74,6 +77,7 @@ dependencies:
   prettier: 2.5.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-resizable: 3.0.4_react-dom@17.0.2+react@17.0.2
   react-scripts: 5.0.0_c376bd4a583ace1c9ab4201977f971ec
   recast: 0.20.5
   remove: 0.1.5
@@ -2169,6 +2173,12 @@ packages:
       '@types/react': 17.0.37
     dev: false
 
+  /@types/react-resizable/1.7.4:
+    resolution: {integrity: sha512-+xsGkd+Gvb9+8mLR1EyhNN8kBRJcsT1uJF4WpkFpFPIoApX2S89BmJA2RVtMdkhwe6YxV4RbHfaJ3bIdcgHc7g==}
+    dependencies:
+      '@types/react': 17.0.37
+    dev: false
+
   /@types/react/17.0.37:
     resolution: {integrity: sha512-2FS1oTqBGcH/s0E+CjrCCR9+JMpsu9b69RTFO+40ua43ZqP5MmQ4iUde/dMjWR909KxZwmOQIFq6AV6NjEG5xg==}
     dependencies:
@@ -3361,6 +3371,11 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
+    dev: false
+
+  /clsx/1.1.1:
+    resolution: {integrity: sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==}
+    engines: {node: '>=6'}
     dev: false
 
   /co/4.6.0:
@@ -8354,6 +8369,18 @@ packages:
       scheduler: 0.20.2
     dev: false
 
+  /react-draggable/4.4.4_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-6e0WdcNLwpBx/YIDpoyd2Xb04PB0elrDrulKUgdrIlwuYvxh5Ok9M+F8cljm8kPXXs43PmMzek9RrB1b7mLMqA==}
+    peerDependencies:
+      react: '>= 16.3.0'
+      react-dom: '>= 16.3.0'
+    dependencies:
+      clsx: 1.1.1
+      prop-types: 15.7.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+    dev: false
+
   /react-error-overlay/6.0.10:
     resolution: {integrity: sha512-mKR90fX7Pm5seCOfz8q9F+66VCc1PGsWSBxKbITjfKVQHMNF2zudxHnMdJiB1fRCb+XsbQV9sO9DCkgsMQgBIA==}
     dev: false
@@ -8369,6 +8396,18 @@ packages:
   /react-refresh/0.11.0:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /react-resizable/3.0.4_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-StnwmiESiamNzdRHbSSvA65b0ZQJ7eVQpPusrSmcpyGKzC0gojhtO62xxH6YOBmepk9dQTBi9yxidL3W4s3EBA==}
+    peerDependencies:
+      react: '>= 16.3'
+    dependencies:
+      prop-types: 15.7.2
+      react: 17.0.2
+      react-draggable: 4.4.4_react-dom@17.0.2+react@17.0.2
+    transitivePeerDependencies:
+      - react-dom
     dev: false
 
   /react-scripts/5.0.0_c376bd4a583ace1c9ab4201977f971ec:
