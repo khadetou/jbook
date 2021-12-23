@@ -1,5 +1,5 @@
 import { ResizableBox } from "react-resizable";
-
+import './resizable.css';
 interface ResizableProps {
     direction: "horizontal" | "vertical";
     children: React.ReactNode;
@@ -7,9 +7,13 @@ interface ResizableProps {
 
 const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
     return (
-        <div >
+        <ResizableBox
+            width={300}
+            height={300}
+            resizeHandles={["s"]}
+        >
             {children}
-        </div>
+        </ResizableBox>
     )
 }
 
