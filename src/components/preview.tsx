@@ -10,7 +10,11 @@ const html = `
   <!DOCTYPE html>
   <html>
     <head>
-     
+      <style>
+       html{
+         background-color: #fafafa;
+       }
+      </style>
     </head>
     <body>
       <div id="root"></div>
