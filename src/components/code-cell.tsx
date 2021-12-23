@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import CodeEditor from '../components/code-editor';
-import "bulmaswatch/superhero/bulmaswatch.min.css";
 import Preview from '../components/preview';
 import bundle from '../bundler';
 import Resizable from './resizable';
