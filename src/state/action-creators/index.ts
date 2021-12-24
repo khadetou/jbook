@@ -5,7 +5,9 @@ import {
   MoveSellAction,
   DeleteSellAction,
   InsertSellBeforeAction,
+  Direction,
 } from "./../actions/index";
+
 export const updateCell = (id: string, content: string): UpdateSellAction => {
   return {
     type: ActionTypes.UPDATE_SELL,
@@ -15,10 +17,7 @@ export const updateCell = (id: string, content: string): UpdateSellAction => {
     },
   };
 };
-export const moveCell = (
-  id: string,
-  direction: "up" | "down"
-): MoveSellAction => {
+export const moveCell = (id: string, direction: Direction): MoveSellAction => {
   return {
     type: ActionTypes.MOVE_SELL,
     payload: {
