@@ -26,7 +26,9 @@ const reducer = produce((state: CellState = initialState, action: Action) => {
         ...state,
       };
     case ActionTypes.DELETE_SELL:
-      return state;
+      delete state.data[action.payload];
+      state.order = state.order.filter((id) => id !== action.payload);
+      return;
     case ActionTypes.INSERT_SELL_BEFORE:
       return state;
     case ActionTypes.UPDATE_SELL:
