@@ -28,11 +28,11 @@ const reducer = produce((state: CellState = initialState, action: Action) => {
       if (targetIndex < 0 || targetIndex > state.order.length - 1) return;
       state.order[index] = state.order[targetIndex];
       state.order[targetIndex] = action.payload.id;
-      return;
+      return state;
     case ActionTypes.DELETE_SELL:
       delete state.data[action.payload];
       state.order = state.order.filter((id) => id !== action.payload);
-      return;
+      return state;
     case ActionTypes.INSERT_SELL_BEFORE:
       const cell: Cell = {
         content: "",
@@ -49,11 +49,11 @@ const reducer = produce((state: CellState = initialState, action: Action) => {
       } else {
         state.order.splice(foundIndex, 0, cell.id);
       }
-      return;
+      return state;
     case ActionTypes.UPDATE_SELL:
       const { id, content } = action.payload;
       state.data[id].content = content;
-      return;
+      return state;
     default:
       return state;
   }
