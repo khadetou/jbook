@@ -1,2 +1,2 @@
-let i;
-export default i;
+export * from "./store";
+export * from "./reducers";

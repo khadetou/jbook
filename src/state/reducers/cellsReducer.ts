@@ -22,7 +22,18 @@ const reducer = (
   state: CellState = initialState,
   action: Action
 ): CellState => {
-  return state;
+  switch (action.type) {
+    case ActionTypes.MOVE_SELL:
+      return state;
+    case ActionTypes.DELETE_SELL:
+      return state;
+    case ActionTypes.INSERT_SELL_BEFORE:
+      return state;
+    case ActionTypes.UPDATE_SELL:
+      return state;
+    default:
+      return state;
+  }
 };
 
 export default reducer;
