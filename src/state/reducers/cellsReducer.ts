@@ -24,13 +24,24 @@ const reducer = (
 ): CellState => {
   switch (action.type) {
     case ActionTypes.MOVE_SELL:
-      return state;
+      return {
+        ...state,
+      };
     case ActionTypes.DELETE_SELL:
       return state;
     case ActionTypes.INSERT_SELL_BEFORE:
       return state;
     case ActionTypes.UPDATE_SELL:
-      return state;
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          [action.payload.id]: {
+            ...state.data[action.payload.id],
+            content: action.payload.content,
+          },
+        },
+      };
     default:
       return state;
   }
