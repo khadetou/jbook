@@ -1,7 +1,7 @@
 import { ActionTypes } from "../action-types";
 import { CellTypes } from "../cell";
 
-interface MoveSellAction {
+export interface MoveSellAction {
   type: ActionTypes.MOVE_SELL;
   payload: {
     id: string;
@@ -9,12 +9,12 @@ interface MoveSellAction {
   };
 }
 
-interface DeleteSellAction {
+export interface DeleteSellAction {
   type: ActionTypes.DELETE_SELL;
   payload: string;
 }
 
-interface InsertSellBeforeAction {
+export interface InsertSellBeforeAction {
   type: ActionTypes.INSERT_SELL_BEFORE;
   payload: {
     id: string;
@@ -22,7 +22,7 @@ interface InsertSellBeforeAction {
   };
 }
 
-interface UpdateSellAction {
+export interface UpdateSellAction {
   type: ActionTypes.UPDATE_SELL;
   payload: {
     id: string;
