@@ -18,6 +18,7 @@ specifiers:
   '@types/prettier': ^2.4.2
   '@types/react': ^17.0.37
   '@types/react-dom': ^17.0.11
+  '@types/react-redux': ^7.1.21
   '@types/react-resizable': ^1.7.4
   '@uiw/react-md-editor': 3.9.1
   assert: ^2.0.0
@@ -35,9 +36,13 @@ specifiers:
   prettier: ^2.5.1
   react: ^17.0.2
   react-dom: ^17.0.2
+  react-redux: ^7.2.6
   react-resizable: ^3.0.4
   react-scripts: 5.0.0
   recast: ^0.20.5
+  redux: ^4.1.2
+  redux-devtools-extension: ^2.13.9
+  redux-thunk: ^2.4.1
   remove: ^0.1.5
   typescript: ^4.5.4
   util: ^0.12.4
@@ -62,6 +67,7 @@ dependencies:
   '@types/prettier': 2.4.2
   '@types/react': 17.0.37
   '@types/react-dom': 17.0.11
+  '@types/react-redux': 7.1.21
   '@types/react-resizable': 1.7.4
   '@uiw/react-md-editor': 3.9.1_5539cae010396b202b015f3568914e95
   assert: 2.0.0
@@ -79,9 +85,13 @@ dependencies:
   prettier: 2.5.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-redux: 7.2.6_react-dom@17.0.2+react@17.0.2
   react-resizable: 3.0.4_react-dom@17.0.2+react@17.0.2
   react-scripts: 5.0.0_c376bd4a583ace1c9ab4201977f971ec
   recast: 0.20.5
+  redux: 4.1.2
+  redux-devtools-extension: 2.13.9_redux@4.1.2
+  redux-thunk: 2.4.1_redux@4.1.2
   remove: 0.1.5
   typescript: 4.5.4
   util: 0.12.4
@@ -2142,6 +2152,13 @@ packages:
       '@types/unist': 2.0.6
     dev: false
 
+  /@types/hoist-non-react-statics/3.3.1:
+    resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
+    dependencies:
+      '@types/react': 17.0.37
+      hoist-non-react-statics: 3.3.2
+    dev: false
+
   /@types/html-minifier-terser/6.1.0:
     resolution: {integrity: sha512-oh/6byDPnL1zeNXFrDXFLyZjkr1MsBG667IM792caf1L2UPOOMf65NFzjUH/ltyfwjAGfs1rsX1eftK0jC/KIg==}
     dev: false
@@ -2232,6 +2249,15 @@ packages:
     resolution: {integrity: sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q==}
     dependencies:
       '@types/react': 17.0.37
+    dev: false
+
+  /@types/react-redux/7.1.21:
+    resolution: {integrity: sha512-bLdglUiBSQNzWVVbmNPKGYYjrzp3/YDPwfOH3nLEz99I4awLlaRAPWjo6bZ2POpxztFWtDDXIPxBLVykXqBt+w==}
+    dependencies:
+      '@types/hoist-non-react-statics': 3.3.1
+      '@types/react': 17.0.37
+      hoist-non-react-statics: 3.3.2
+      redux: 4.1.2
     dev: false
 
   /@types/react-resizable/1.7.4:
@@ -6068,6 +6094,12 @@ packages:
       hash.js: 1.1.7
       minimalistic-assert: 1.0.1
       minimalistic-crypto-utils: 1.0.1
+    dev: false
+
+  /hoist-non-react-statics/3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+    dependencies:
+      react-is: 16.13.1
     dev: false
 
   /homedir-polyfill/1.0.3:
@@ -10071,6 +10103,28 @@ packages:
       - supports-color
     dev: false
 
+  /react-redux/7.2.6_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-10RPdsz0UUrRL1NZE0ejTkucnclYSgXp5q+tB5SWx2qeG2ZJQJyymgAhwKy73yiL/13btfB6fPr+rgbMAaZIAQ==}
+    peerDependencies:
+      react: ^16.8.3 || ^17
+      react-dom: '*'
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.16.5
+      '@types/react-redux': 7.1.21
+      hoist-non-react-statics: 3.3.2
+      loose-envify: 1.4.0
+      prop-types: 15.7.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      react-is: 17.0.2
+    dev: false
+
   /react-refresh/0.11.0:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}
     engines: {node: '>=0.10.0'}
@@ -10267,6 +10321,28 @@ packages:
     dependencies:
       indent-string: 4.0.0
       strip-indent: 3.0.0
+    dev: false
+
+  /redux-devtools-extension/2.13.9_redux@4.1.2:
+    resolution: {integrity: sha512-cNJ8Q/EtjhQaZ71c8I9+BPySIBVEKssbPpskBfsXqb8HJ002A3KRVHfeRzwRo6mGPqsm7XuHTqNSNeS1Khig0A==}
+    peerDependencies:
+      redux: ^3.1.0 || ^4.0.0
+    dependencies:
+      redux: 4.1.2
+    dev: false
+
+  /redux-thunk/2.4.1_redux@4.1.2:
+    resolution: {integrity: sha512-OOYGNY5Jy2TWvTL1KgAlVy6dcx3siPJ1wTq741EPyUKfn6W6nChdICjZwCd0p8AZBs5kWpZlbkXW2nE/zjUa+Q==}
+    peerDependencies:
+      redux: ^4
+    dependencies:
+      redux: 4.1.2
+    dev: false
+
+  /redux/4.1.2:
+    resolution: {integrity: sha512-SH8PglcebESbd/shgf6mii6EIoRM0zrQyjcuQ+ojmfxjTtE0z9Y8pa62iA/OJ58qjP6j27uyW4kUF4jl/jd6sw==}
+    dependencies:
+      '@babel/runtime': 7.16.5
     dev: false
 
   /refractor/3.5.0:
