@@ -1,4 +1,5 @@
 import { ActionTypes } from "../action-types";
+import { CellTypes } from "../cell";
 
 interface MoveSellAction {
   type: ActionTypes.MOVE_SELL;
@@ -17,7 +18,7 @@ interface InsertSellBeforeAction {
   type: ActionTypes.INSERT_SELL_BEFORE;
   payload: {
     id: string;
-    type: "code" | "text";
+    type: CellTypes;
   };
 }
 
