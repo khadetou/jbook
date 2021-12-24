@@ -26,6 +26,7 @@ specifiers:
   axios: ^0.24.0
   bulmaswatch: ^0.8.1
   esbuild-wasm: 0.8.27
+  immer: ^9.0.7
   jscodeshift: 0.1.0
   localforage: ^1.10.0
   monaco-editor: ^0.21.2
@@ -75,6 +76,7 @@ dependencies:
   axios: 0.24.0
   bulmaswatch: 0.8.1
   esbuild-wasm: 0.8.27
+  immer: 9.0.7
   jscodeshift: 0.1.0
   localforage: 1.10.0
   monaco-editor: 0.21.3
