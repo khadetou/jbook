@@ -31,8 +31,17 @@ export interface UpdateSellAction {
   };
 }
 
+export interface BundleCreatedAction {
+  type: ActionTypes.BUNDLE_CREATED;
+  payload: {
+    code: string;
+    err: string;
+  };
+}
+
 export type Action =
   | MoveSellAction
   | DeleteSellAction
   | InsertSellBeforeAction
-  | UpdateSellAction;
+  | UpdateSellAction
+  | BundleCreatedAction;
