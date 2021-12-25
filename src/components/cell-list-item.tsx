@@ -8,7 +8,7 @@ interface CellListItemProps {
 
 const CellListItem: React.FC<CellListItemProps> = ({ cell }) => {
     let child: JSX.Element;
-    if (cell.code === "code") { child = <CodeCell /> } else { child = <TextEditor /> }
+    if (cell.code === "code") { child = <CodeCell cell={cell} /> } else { child = <TextEditor /> }
     return (
         <div>
             {child}
