@@ -33,7 +33,7 @@ export const deleteCell = (id: string): DeleteSellAction => {
   };
 };
 export const insertCellBefore = (
-  id: string,
+  id: string | null,
   cellType: CellTypes
 ): InsertSellBeforeAction => {
   return {

@@ -18,7 +18,7 @@ export interface DeleteSellAction {
 export interface InsertSellBeforeAction {
   type: ActionTypes.INSERT_SELL_BEFORE;
   payload: {
-    id: string;
+    id: string | null;
     type: CellTypes;
   };
 }
