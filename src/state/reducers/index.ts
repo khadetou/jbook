@@ -1,5 +1,5 @@
-import CellsReducer from "./cellsReducer";
 import { combineReducers } from "redux";
+import CellsReducer from "./cellsReducer";
 
 const reducers = combineReducers({
   cells: CellsReducer,
